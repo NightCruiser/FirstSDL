@@ -47,11 +47,13 @@ void Game::Run() {
 			return;
 		}
 
-
-
-
+		SDL_FillRect(mainSurfacePtr_, NULL, SDL_MapRGB(mainSurfacePtr_->format, 255, 255, 255));
+		SDL_UpdateWindowSurface(mainWindowPtr_);
+		SDL_Delay(10000);
 	}
 
+	SDL_FreeSurface(mainSurfacePtr_);
+	SDL_DestroyWindow(mainWindowPtr_);
 	SDL_Quit();
 }
 
