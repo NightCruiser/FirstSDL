@@ -63,6 +63,8 @@ bool Game::IsRunning() {
 
 void Game::Terminate() {}
 
-bool Game::LoadMedia() {}
+bool Game::LoadMedia() {
+	return false;
+}
 
 

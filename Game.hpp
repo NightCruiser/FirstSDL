@@ -1,7 +1,7 @@
 /*Linux*/
-//#include "SDL2/SDL.h"
+#include "SDL2/SDL.h"
 /*Windows*/
-#include "SDL.h"
+//#include "SDL.h"
 class Game {
 public:
 	Game();
@@ -14,9 +14,9 @@ public:
 	
 private:
 	bool isRunning_;
-	SDL_Window *mainWindowPtr_;
 	int width_;
 	int height_;
+	SDL_Window *mainWindowPtr_;
 	SDL_Surface *mainSurfacePtr_;
 	SDL_Surface *pictureSurfacePtr_;
 };
