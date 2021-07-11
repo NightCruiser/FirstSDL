@@ -18,32 +18,32 @@ Game::Game(int width, int height) : isRunning_(false),
 
 Game::~Game() {}
 
-Game::Run() {
+void Game::Run() {
 	if (isRunning_) {
 		std::cout << "Game is already running";
 		return;
 	}
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		std::cerr << "SDL Initialisation failed : " <<
-			  << SDL_GetError() << std::endl;
+		std::cerr << "SDL Initialisation failed : "
+			      << SDL_GetError() << std::endl;
 		return;
 	} else {
 		mainWindowPtr_ = SDL_CreateWindow("MyGame", 
 				SDL_WINDOWPOS_UNDEFINED, 
 				SDL_WINDOWPOS_UNDEFINED,
-				width, height, 0);
+				width_, height_, 0);
 		if (mainWindowPtr_ == nullptr) {
-			std::cerr << "Window Creation Failed: " <<
-				  << SDL_GetError() << std::endl;
+			std::cerr << "Window Creation Failed: "
+				  	  << SDL_GetError() << std::endl;
 			return;
 		}
 
 		mainSurfacePtr_ = SDL_GetWindowSurface(mainWindowPtr_);
 /*draw a surface*/
 		if (mainSurfacePtr_ == nullptr) {
-			std::cerr << "cannot get surface: " <<
-				  << SDL_GetError() << std::endl;
+			std::cerr << "cannot get surface: "
+				  	  << SDL_GetError() << std::endl;
 			return;
 		}
 
@@ -55,12 +55,12 @@ Game::Run() {
 	SDL_Quit();
 }
 
-Game::IsRunning() {
+bool Game::IsRunning() {
 	return isRunning_;
 }
 
-Game::Terminate() {}
+void Game::Terminate() {}
 
-Game::LoadMedia() {}
+bool Game::LoadMedia() {}
 
 

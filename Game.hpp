@@ -1,5 +1,7 @@
-#include "SDL2/SDL.h"
-
+/*Linux*/
+//#include "SDL2/SDL.h"
+/*Windows*/
+#include "SDL.h"
 class Game {
 public:
 	Game();
