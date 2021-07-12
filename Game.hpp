@@ -1,7 +1,12 @@
 /*Linux*/
+#ifdef __linux__
 #include "SDL2/SDL.h"
+#endif
 /*Windows*/
-//#include "SDL.h"
+#ifdef _WIN64
+#include "SDL.h"
+#endif
+
 class Game {
 public:
 	Game();
